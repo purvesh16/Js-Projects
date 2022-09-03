@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --left-bg-color: rgba(87, 84, 236, 0.7);
+  --right-bg-color: rgba(43, 43, 43, 0.8);
+  --left-btn-hover-color: rgba(87, 84, 236, 1);
+  --right-btn-hover-color: rgba(28, 122, 28, 1);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --speed: 1000ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+h1{
+  font-size: 4rem;
+  color: white;
+  white-space: nowrap;
+  z-index: 100;
+
+}
+
+.btn{
+  text-decoration: none;
+  font-size: 1.3rem;
+  padding: .7rem 1.5rem;
+  /* background-color: aliceblue; */
+  border-radius: .5rem;
+  border: 4px solid white;
+  color: rgb(255, 255, 255);
+  cursor: pointer; 
+  text-transform: uppercase;
+  z-index: 100;
+  transition: .4s ease;
+  white-space: nowrap;
+
+}
+
+.btn:hover{
+  background-color: white;
+  color: black;
+}
+
+.container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+}
+
+.split{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+ 
+}
+  
+
+
+
+.split.left{
+  left: 0;
+  background: url('/ps.jpg');
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 1.3s ease;
+
+}
+
+.split.left::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.split.left:hover::before{
+  opacity: 1;
+}
+
+.hover-left .left{
+  width: var(--hover-width);
+}
+.hover-left .right{
+  width: var(--other-width);
+}
+
+
+.hover-right .right{
+  width: var(--hover-width);
+}
+.hover-right .left{
+  width: var(--other-width);
+}
+
+.split.right{
+  right: 0;
+  background: url('/xbox.jpg');
+  display: flex;
+  background-repeat: no-repeat;
+  transition: 1.3s ease;
+
+  background-size: cover;
+
+}
+
+
+.split.right::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.357);
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.split.right:hover::before{
+  opacity: 1;
+}
+
+
+@media (max-width: 786px){
+
+  h1{
+    font-size: 2rem;
+  }
+}
