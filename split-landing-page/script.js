@@ -5,7 +5,7 @@ const right   = document.querySelector('.right')
 
 /* we can use mouseover = mouseout or mouseenter + mouseleave */
 
-// This is my method 
+// This is my method means i had coded it like this after that i saw brad method
 
 left.addEventListener('mouseover', () =>{
     containers.classList.toggle('hover-left')
